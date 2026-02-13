@@ -18,7 +18,7 @@ import requests
 
 # FRED API key (free at https://fred.stlouisfed.org/docs/api/api_key.html)
 # Option 1: Put your key here (works for you; don't commit if sharing code)
-FRED_API_KEY = ""
+FRED_API_KEY = "c22001cf7d45dc21876d4f5dddcb3c50"
 
 # Option 2: If FRED_API_KEY above is empty, the script will use the FRED_API_KEY
 #            environment variable (set in terminal or .env file).
@@ -91,7 +91,7 @@ def _get_date_range_from_reit(data_dir: Path) -> tuple[str, str]:
 
 def main():
     """Fetch interest rates from FRED and save to data folder."""
-    api_key = FRED_API_KEY or os.environ.get("FRED_API_KEY")
+    api_key = (FRED_API_KEY or os.environ.get("FRED_API_KEY") or "").strip()
     if not api_key:
         print("ERROR: You need a FRED API key.")
         print("  1. Get one free at: https://fred.stlouisfed.org/docs/api/api_key.html")

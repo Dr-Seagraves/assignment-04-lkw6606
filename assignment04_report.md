@@ -99,8 +99,8 @@ By using only one predictor at a time, we might be omitting:
 ---
 
 ## Reproducibility Checklist
-- [ ] Script runs end-to-end without errors
-- [ ] Regression output saved to `Results/regression_div12m_me.txt`, `regression_prime_rate.txt`, `regression_ffo_at_reit.txt`
-- [ ] Scatter plots saved to `Results/scatter_div12m_me.png`, `scatter_prime_rate.png`, `scatter_ffo_at_reit.png`
+- [ yes] Script runs end-to-end without errors
+- [ yes] Regression output saved to `Results/regression_div12m_me.txt`, `regression_prime_rate.txt`, `regression_ffo_at_reit.txt`
+- [ yes] Scatter plots saved to `Results/scatter_div12m_me.png`, `scatter_prime_rate.png`, `scatter_ffo_at_reit.png`
 - [ ] Report accurately reflects regression results
 - [ ] All interpretations are in economic units (not just statistical jargon)
