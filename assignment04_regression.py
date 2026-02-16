@@ -95,7 +95,10 @@ def load_reit_annual_data(data_path: Path) -> pd.DataFrame:
         df["date"] = pd.to_datetime(df["date"], errors="coerce")
         df["year"] = df["date"].dt.year
 
-    df = df.rename(columns={"ret12": "ret"})
+    if "ret" not in df.columns and "ret12" in df.columns:
+        df = df.rename(columns={"ret12": "ret"})
+    elif "ret" in df.columns and "ret12" in df.columns:
+        df = df.drop(columns=["ret12"])
 
     df = _merge_annual_interest_rates(df, data_path.parent)
 
